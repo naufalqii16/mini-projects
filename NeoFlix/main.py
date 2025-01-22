@@ -1,4 +1,6 @@
 from fitur import User
+
+
 users = [
     User("alice", "Basic", 6, "REF123"),
     User("bob", "Premium", 12, "REF456"),
