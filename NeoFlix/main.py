@@ -12,6 +12,7 @@ user1 = User('user1', 'Basic', 10, 'REF789')
 print('\n=====================')
 print('Selamat datang di NeoFlix')
 print('=====================')
+
 while True:
     print('\n=====================')
     print('1. Lihat plan yang kamu miliki')
