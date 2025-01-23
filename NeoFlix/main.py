@@ -1,36 +1,52 @@
 from fitur import User
 
-
 users = [
     User("alice", "Basic", 6, "REF123"),
-    User("bob", "Premium", 12, "REF456"),
+    User("bob", "Standard", 13, "REF456"),
     User("charlie", "Standard", 3, "REF789")
 ]
 
-user1 = User('user1', 'Basic', 10, 'REF789')
+new_user = User('anak baru', None, 0, 'REF789')
+mid_user = users[0]
+old_user = users[1]
+
+trial_users = [ new_user, mid_user, old_user ]
 
 print('\n=====================')
-print('Selamat datang di NeoFlix')
+print('Login to NeoFlix')
+print('=====================')
+while True:
+    user_type = int(input('What kind of user are you?:\n1. new user\n2. mid user\n3. old user\npick number: '))
+    if user_type not in [1,2,3]:
+        print('pick the right number\n')
+        continue
+    break
+    
+print('\n\n=====================')
+print(f'Welcome to NeoFlix, {trial_users[user_type-1]}')
 print('=====================')
 
 while True:
     print('\n=====================')
-    print('1. Lihat plan yang kamu miliki')
-    print('2. Beli plan')
-    print('3. Lihat seluruh plan NeoFlix')
-    print('4. Keluar')
+    print('1. Check my plan')
+    print('2. Buy plan')
+    print('3. Upgrade plan')
+    print('4. Check all plan of NeoFlix')
+    print('5. Exit')
     print('=====================')
-    menu = input('Pilih menu: ')
+    menu = input('Pick menu: ')
+    print('---------------------')
 
     if menu == '1':
-        user1.get_user_plan()
+        trial_users[user_type-1].get_user_plan()
     elif menu == '2':
-        user1.buy_plan(users)
+        trial_users[user_type-1].buy_plan(users)
     elif menu == '3':
-        for key in range(3):
-            user1.get_plan(key)
+        trial_users[user_type-1].upgrade_plan()
     elif menu == '4':
-        print('Terima kasih telah menggunakan NeoFlix')
+        trial_users[user_type-1].get_plan(4)
+    elif menu == '5':
+        print('Thank you for using NeoFlix')
         break
     else:
-        print('Menu tidak tersedia')
+        print('Menu isn\'ot available')
